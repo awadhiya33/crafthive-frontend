@@ -1,0 +1,66 @@
+<mat-toolbar color="primary" class="sss">
+  <span>
+    CraftHive
+  </span>
+  <span class="space-buttons"></span>
+  <button *ngIf="!isLoggedIn()" routerLink="/login" mat-raised-button color="primary">Login</button>
+  <button *ngIf="isLoggedIn()" (click)="logout()" mat-raised-button color="warn">Logout</button>
+</mat-toolbar>
+
+<mat-toolbar color="primary" *ngIf="isLoggedIn()" class="aaa">
+  <button mat-raised-button color="primary" routerLink="/">Home</button>
+  <button *ngIf="!isAdmin()" mat-raised-button color="primary" routerLink="/cart" class="m-1">Cart</button>
+  <button *ngIf="!isAdmin()" mat-raised-button color="primary" routerLink="/myOrders" class="m-1">My Orders</button>
+  <button *ngIf="isAdmin()" mat-raised-button color="primary" routerLink="/addNewProduct" class="m-1">addNewProduct</button>
+  <button *ngIf="isAdmin()" mat-raised-button color="primary" routerLink="/getAllProduct" class="m-1">showAllProducts</button>
+  <button *ngIf="isAdmin()" mat-raised-button color="primary" routerLink="/orderInformation" class="m-1">Order Information</button>
+
+</mat-toolbar>
+
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">CraftHive</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/" >Home
+           
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  *ngIf="!isAdmin() && isLoggedIn()" routerLink="/myOrders">My Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="!isAdmin() && isLoggedIn()" routerLink="/cart">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isAdmin() && isLoggedIn()" routerLink="/addNewProduct">Add New Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isAdmin() && isLoggedIn()" routerLink="/getAllProduct">Get All Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isAdmin() && isLoggedIn()" routerLink="/orderInformation">Orders</a>
+        </li>
+        
+      </ul>
+       <div *ngIf="isLoggedIn()">
+        <form class="d-flex">
+          <input class="form-control me-sm-2" type="search" placeholder="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit" >Search</button>
+        </form>
+
+      </div> 
+      
+      <div>
+        <button *ngIf="!isLoggedIn()" routerLink="/login" class="btn btn-success">Login</button>
+        <button *ngIf="isLoggedIn()" (click)="logout()"  color="warn">Logout</button>
+      </div>
+    </div>
+  </div>
+</nav> -->
