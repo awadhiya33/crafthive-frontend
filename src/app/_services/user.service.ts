@@ -14,11 +14,11 @@ export class UserService {
   );
 
   public register(registerData:any){
-    return this.httpclient.post("http://localhost:9090/registerNewUser",registerData,{headers:this.requestHeader});
+    return this.httpclient.post("https://crafthive-backend.onrender.com/registerNewUser",registerData,{headers:this.requestHeader});
   }
 
   public login(loginData:any){
-    return this.httpclient.post("http://localhost:9090/authenticate",loginData,{headers:this.requestHeader});
+    return this.httpclient.post("https://crafthive-backend.onrender.com/authenticate",loginData,{headers:this.requestHeader});
   }
 
   public roleMatch(allowedRoles:any) : boolean{

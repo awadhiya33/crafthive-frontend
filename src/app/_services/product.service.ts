@@ -14,47 +14,47 @@ export class ProductService {
   constructor(private httpclient:HttpClient) { }
 
   public createTransaction(amount:any){
-    return this.httpclient.get("http://localhost:9090/createTransaction/"+amount);
+    return this.httpclient.get("https://crafthive-backend.onrender.com/createTransaction/"+amount);
   }
 
   public markAsDelivered(OrderId:any){
-    return this.httpclient.get("http://localhost:9090/markOrderAsDelivered/"+OrderId);
+    return this.httpclient.get("https://crafthive-backend.onrender.com/markOrderAsDelivered/"+OrderId);
   }
   public getAllOrderDetailsForAdmin(status:string):Observable<MyOrderDetails[]>{
-    return this.httpclient.get<MyOrderDetails[]>("http://localhost:9090/getAllOrderDetails/"+status);
+    return this.httpclient.get<MyOrderDetails[]>("https://crafthive-backend.onrender.com/getAllOrderDetails/"+status);
 
   }
   public getMyOrders():Observable<MyOrderDetails[]>{
-    return this.httpclient.get<MyOrderDetails[]>("http://localhost:9090/getOrderDetails");
+    return this.httpclient.get<MyOrderDetails[]>("https://crafthive-backend.onrender.com/getOrderDetails");
 
   }
   public deleteCartItem(cartId: any){
-    return this.httpclient.delete("http://localhost:9090/deleteCartItem/"+cartId);
+    return this.httpclient.delete("https://crafthive-backend.onrender.com/deleteCartItem/"+cartId);
   }
 
   public addProduct(product:FormData){
-    return this.httpclient.post<Product>("http://localhost:9090/addNewProduct",product);
+    return this.httpclient.post<Product>("https://crafthive-backend.onrender.com/addNewProduct",product);
   }
   public getAllProducts(pageNum:number,searchKeyword:string=''){
-    return this.httpclient.get<Product[]>("http://localhost:9090/getAllProducts?pageNumber="+pageNum+"&searchKey="+searchKeyword);
+    return this.httpclient.get<Product[]>("https://crafthive-backend.onrender.com/getAllProducts?pageNumber="+pageNum+"&searchKey="+searchKeyword);
   }
   public getProductDetailsById(productId:any){
-    return this.httpclient.get<Product[]>("http://localhost:9090/getProductDetailsById/"+productId);
+    return this.httpclient.get<Product[]>("hhttps://crafthive-backend.onrender.com/getProductDetailsById/"+productId);
   }
   public deleteProduct(productId:number){
-    return this.httpclient.delete("http://localhost:9090/deleteProductDetails/"+productId);
+    return this.httpclient.delete("https://crafthive-backend.onrender.com/deleteProductDetails/"+productId);
   }
   public getProductDetails(isSingleProductCheckout:any,productId:any){
-    return this.httpclient.get<Product[]>("http://localhost:9090/getProductDetails/"+isSingleProductCheckout+"/"+productId);
+    return this.httpclient.get<Product[]>("https://crafthive-backend.onrender.com/getProductDetails/"+isSingleProductCheckout+"/"+productId);
   }
   public placeOrder(orderDetails:OrderDetails,isCartCheckout:any){
     console.log(orderDetails);
-    return this.httpclient.post("http://localhost:9090/placeOrder/"+isCartCheckout,orderDetails);
+    return this.httpclient.post("hhttps://crafthive-backend.onrender.com/placeOrder/"+isCartCheckout,orderDetails);
   }
   public addToCart(productId:any){
-    return this.httpclient.get("http://localhost:9090/addToCart/"+productId);
+    return this.httpclient.get("https://crafthive-backend.onrender.com/addToCart/"+productId);
   }
   public getCartDetails(){
-    return this.httpclient.get("http://localhost:9090/getCartDetails");
+    return this.httpclient.get("https://crafthive-backend.onrender.com/getCartDetails");
   }
 }
