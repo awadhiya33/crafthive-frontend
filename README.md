@@ -1,6 +1,7 @@
 # CrafthiveFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
+This project is deployed on github pages at https://awadhiya33.github.io/crafthive-frontend/ 
+Backend services is running on render.com and for database we are using YugaByte DB.
 
 ## Development server
 
