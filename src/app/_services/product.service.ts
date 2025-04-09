@@ -39,7 +39,7 @@ export class ProductService {
     return this.httpclient.get<Product[]>("https://crafthive-backend.onrender.com/getAllProducts?pageNumber="+pageNum+"&searchKey="+searchKeyword);
   }
   public getProductDetailsById(productId:any){
-    return this.httpclient.get<Product[]>("hhttps://crafthive-backend.onrender.com/getProductDetailsById/"+productId);
+    return this.httpclient.get<Product[]>("https://crafthive-backend.onrender.com/getProductDetailsById/"+productId);
   }
   public deleteProduct(productId:number){
     return this.httpclient.delete("https://crafthive-backend.onrender.com/deleteProductDetails/"+productId);
@@ -49,7 +49,7 @@ export class ProductService {
   }
   public placeOrder(orderDetails:OrderDetails,isCartCheckout:any){
     console.log(orderDetails);
-    return this.httpclient.post("hhttps://crafthive-backend.onrender.com/placeOrder/"+isCartCheckout,orderDetails);
+    return this.httpclient.post("https://crafthive-backend.onrender.com/placeOrder/"+isCartCheckout,orderDetails);
   }
   public addToCart(productId:any){
     return this.httpclient.get("https://crafthive-backend.onrender.com/addToCart/"+productId);
